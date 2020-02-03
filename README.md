@@ -2,7 +2,7 @@
 
 # AutoTS 
 
-##一些关于AutoTimeSeries 问题难点summary:
+## 一些关于AutoTimeSeries 问题难点summary:
 
 	1. timeseries 问题是对未来进行预测，对于不同的TS问题，如何选取更加stable的验证集和方法？
 	2. 如何从时间序列数据集中的自动提取有效的特征？
@@ -12,11 +12,12 @@
 	6. 如果采用GBDT模型的情况下,GBDT学习不到趋势信息,如何解决这个模型本身的问题?
 
 
-##本项目工作:
+## 本项目工作:
 
 限于memory issues(16 RAM docker was used)本model采用GBDT模型进行建模，具体内容大概如下:
 
 1. FE part：
+
    **主要code 在models.preprocessing文件中**
    1. most critical numerical features: (Numerical operations (addition, subtraction, multiplication, and division) of pairs of numerical feature) so I use GBDT's gain importance to select the top-n most important numerical features for pairs.
    2. lag feature:
